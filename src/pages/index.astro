@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import logo from '../static/logo.png';
+import data from '../static/data.json';
+---
+
+<Layout title='Welcome to Astro.'>
+    <header class='w-full border-b bg-white'>
+        <div
+            class='container flex flex-col items-center space-x-4 md:justify-between md:flex-row md:h-12'
+        >
+            <div class='flex gap-3 items-center'>
+                <a class='flex items-center space-x-2' href='/'>
+                    <Image src={logo} class="w-6 h-6" alt="GPTs URL" />
+                    <span class='inline-block font-bold text-xl'>GPTs URL</span>
+                </a>
+            </div>
+            <div class="text-xs text-muted-foreground">Browse the biggest GPT directory in internet. Updated daily.</div>
+        </div>
+    </header>
+    <main class="container py-8">
+        <h1 class="text-4xl font-bold tracking-tight lg:text-5xl lg:leading-[3.5rem] mb-6">Biggest GPTs Store</h1>
+        <div class="text-md text-muted-foreground">300 GPTs found and counting.</div>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 py-8">
+            {data.map(item => (
+                <a class="flex gap-3 bg-white rounded-2xl p-5 items-start cursor-pointer select-none group hover:shadow-lg" target="_blank" href={item.url}>
+                    <img loading="lazy" decoding="async" class="flex w-20 h-20 rounded-full flex-shrink-0 bg-gray-100 overflow-hidden" src={item.icon} alt={item.title}>
+                    <div class="flex-1">
+                        <h3 class="font-medium text-gray-900 text-lg transition group-hover:text-[#0b7b94]">
+                            {item.title}
+                        </h3>
+                        {item.author && <p class="opacity-70 text-sm mt-1">by <span class="text-[#0b7b94]">{item.author}<span></p>}
+                        <p class="text-gray-500 mt-1">
+                            {item.desc}
+                        </p>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </main>
+</Layout>
+
+<style></style>
