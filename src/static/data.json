@@ -77,6 +77,13 @@
         "desc": "Your Research Assistant - Unlock scientific research from over 200M papers and navigate the academic corpus"
     },
     {
+        "url": "https://chat.openai.com/g/g-MQuQhmq0N-disneyfy-me",
+        "icon": "https://files.oaiusercontent.com/file-VgfzJ5aljzQZ5m26kDylyShz?se=2123-10-19T00%3A26%3A20Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D07c2970a-9a87-437c-b36b-6227ae4949f1.png&sig=Xy6ismirLUfOnddNEiTZwNm4goXjcW%2BIZxDf4E0eItQ%3D",
+        "title": "Disneyfy Me",
+        "author": "Aaron Misash Apaza Coaquira",
+        "desc": "Creates Disney-style art from images, maintaining original details."
+    },
+    {
         "url": "https://chat.openai.com/g/g-IpYeySKKw-emailgeeks",
         "icon": "https://files.oaiusercontent.com/file-FG24Fjkimb1Ba8SLSKcZxYdC?se=2123-10-14T15%3A24%3A12Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Denvelope.png&sig=Z8%2BUz9h%2BQ0cWzwwzILSTemA4G2AnfXwjjfBaVFEc4xw%3D",
         "title": "emailgeeks",
