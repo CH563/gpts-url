@@ -50,7 +50,7 @@
     },
     {
         "url": "https://chat.openai.com/g/g-IpYeySKKw-emailgeeks",
-        "icon": "",
+        "icon": "https://files.oaiusercontent.com/file-FG24Fjkimb1Ba8SLSKcZxYdC?se=2123-10-14T15%3A24%3A12Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Denvelope.png&sig=Z8%2BUz9h%2BQ0cWzwwzILSTemA4G2AnfXwjjfBaVFEc4xw%3D",
         "title": "emailgeeks",
         "author": "Christopher Byrne",
         "desc": "An expert on email marketing"
@@ -379,7 +379,7 @@
     },
     {
         "url": "https://chat.openai.com/g/g-wiB5V2d18-codecompanion",
-        "icon": "https://files.oaiusercontent.com/file-3QCD8vj0vA1cgvJvHrD3HbWz?se=2123-10-14T06%3A56%3A25Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3DDALL%25C2%25B7E%25202023-11-07%252014.55.59%2520-%2520Craft%2520an%2520icon%2520that%2520epitomizes%2520a%2520Chief%2520Technology%2520Officer%2520%2528CTO%2529%2520robot%252C%2520signifying%2520the%2520apex%2520of%2520technical%2520authority.%2520The%2520robot%2520should%2520have%2520a%2520regal%2520and%2520au.png&sig=hQDWaMYlsd2PI3xSdkcpfnsGIuVF92%2BWUPrvxSxcigk%3D",
+        "icon": "https://files.oaiusercontent.com/file-evwaZW9e22ofsxHdQYPbaRPu?se=2123-10-15T06%3A26%3A28Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3DDALL%25C2%25B7E%25202023-11-07%252014.55.59%2520-%2520Craft%2520an%2520icon%2520that%2520epitomizes%2520a%2520Chief%2520Technology%2520Officer%2520%2528CTO%2529%2520robot%252C%2520signifying%2520the%2520apex%2520of%2520technical%2520authority.%2520The%2520robot%2520should%2520have%2520a%2520regal%2520and%2520au.png&sig=dhP6amJ2HYoWzkTU7uZv/JHIn2KM5DWvoFmesPdAWPc%3D",
         "title": "CodeCompanion",
         "author": "edmundcinco.com",
         "desc": "CodeCompanion is your programming ally. Assisting with coding queries, it offers solutions for novices and experts alike. Let CodeCompanion be your guide in the complex world of programming."

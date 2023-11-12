@@ -1,8 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import logo from '../static/logo.png';
 import data from '../static/data.json';
+import ImgIco from '../components/ImgIco.astro';
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -12,7 +11,7 @@ import data from '../static/data.json';
         >
             <div class='flex gap-3 items-center'>
                 <a class='flex items-center space-x-2' href='/'>
-                    <Image src={logo} class="w-6 h-6" alt="GPTs URL" />
+                    <img src="/logo.png" class="w-6 h-6" alt="GPTs URL" />
                     <span class='inline-block font-bold text-xl'>GPTs URL</span>
                 </a>
             </div>
@@ -25,7 +24,7 @@ import data from '../static/data.json';
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 py-8">
             {data.map(item => (
                 <a class="flex gap-3 bg-white rounded-2xl p-5 items-start cursor-pointer select-none group hover:shadow-lg" target="_blank" href={item.url}>
-                    <img loading="lazy" decoding="async" class="flex w-20 h-20 rounded-full flex-shrink-0 bg-gray-100 overflow-hidden" src={item.icon} alt={item.title}>
+                    <ImgIco icon={item.icon} title={item.title} />
                     <div class="flex-1">
                         <h3 class="font-medium text-gray-900 text-lg transition group-hover:text-[#0b7b94]">
                             {item.title}
