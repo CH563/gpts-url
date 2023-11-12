@@ -1,0 +1,18 @@
+---
+import Themetoggle from './Themetoggle.astro';
+---
+
+<header class='w-full border-b bg-white dark:bg-black/50 dark:border-black'>
+    <div
+        class='container flex items-center justify-between space-x-4 md:h-12'
+    >
+        <div class='flex gap-3 items-center flex-col md:justify-between md:flex-row'>
+            <a class='flex items-center space-x-2' href='/'>
+                <img src="/logo.png" class="w-6 h-6" alt="GPTs URL" />
+                <span class='inline-block font-bold text-xl'>GPTs URL</span>
+            </a>
+            <div class="text-xs text-muted-foreground">Browse the biggest GPT directory in internet. Updated daily.</div>
+        </div>
+        <Themetoggle />
+    </div>
+</header>

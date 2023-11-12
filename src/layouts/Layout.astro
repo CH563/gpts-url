@@ -1,34 +1,88 @@
 ---
+import { SEO } from 'astro-seo';
+
+const canonicalURL = Astro.url.toString();
+const resolvedImageWithDomain = `${Astro.url.origin}/pwa-512.png`;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Discover the GPT Store by OpenAI | GPTsUrl - Share and search gpts url</title>
-		<meta name="description" content="GPTsUrl is the first and biggest GPTs directory. With GPTsUrl, you can share and discover the best GPTs in GPT Store">
-	</head>
-	<body class="bg-gray-50">
-		<slot />
-	</body>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='description' content='Astro description' />
+        <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover'
+        />
+        <meta name='referrer' content='no-referrer' />
+        <link rel='sitemap' href='/sitemap-index.xml' />
+        <link rel='icon' type='image/png' href='/favicon.png' />
+        <link
+            rel='apple-touch-icon'
+            href='/apple-touch-icon.png'
+            sizes='180x180'
+        />
+        <link rel='mask-icon' href='/favicon.png' color='#FFFFFF' />
+        <meta name='theme-color' content='#212129' />
+        <meta name='generator' content={Astro.generator} />
+        <SEO
+            title='Discover the GPT Store by OpenAI | GPTsUrl - Share and search gpts url'
+            description='GPTsUrl is the first and biggest GPTs directory. With GPTsUrl, you can share and discover the best GPTs in GPT Store'
+            canonical={canonicalURL}
+            twitter={{
+                creator: '@LiWen563',
+                site: '@LiWen563',
+                card: 'summary_large_image',
+            }}
+            openGraph={{
+                basic: {
+                    url: canonicalURL,
+                    type: 'website',
+                    title: 'Discover the GPT Store by OpenAI | GPTsUrl - Share and search gpts url',
+                    image: resolvedImageWithDomain,
+                },
+                image: {
+                    alt: 'GPTs Url',
+                },
+            }}
+        />
+    </head>
+    <body class='bg-gray-50 dark:bg-gray-900 dark:text-white'>
+        <slot />
+        <style is:global>
+            :root {
+                --accent: 136, 58, 234;
+                --accent-light: 224, 204, 250;
+                --accent-dark: 49, 10, 101;
+                --accent-gradient: linear-gradient(
+                    45deg,
+                    rgb(var(--accent)),
+                    rgb(var(--accent-light)) 30%,
+                    white 60%
+                );
+            }
+            html {
+                font-family: system-ui, sans-serif;
+            }
+        </style>
+    </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-	}
-</style>
+
+
+
+
+<script>
+const initTheme = () => {
+    const darkSchema = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storageTheme = localStorage.getItem('theme');
+    if (storageTheme) {
+        document.documentElement.classList.toggle(
+        'dark',
+        storageTheme === 'dark'
+        );
+    } else {
+        document.documentElement.classList.toggle('dark', darkSchema);
+    }
+};
+initTheme();
+</script>
