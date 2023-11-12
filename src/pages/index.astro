@@ -10,7 +10,7 @@ import ImgIco from '../components/ImgIco.astro';
     <Header />
     <main class="container py-8">
         <h1 class="text-4xl font-bold tracking-tight lg:text-5xl lg:leading-[3.5rem] mb-6">Biggest GPTs Store</h1>
-        <div class="text-md text-muted-foreground">300 GPTs found and counting.</div>
+        <div class="text-md text-muted-foreground">{data.length} GPTs found and counting.</div>
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 py-8">
             {data.map(item => (
                 <a class="flex gap-3 bg-white rounded-2xl p-5 items-start cursor-pointer select-none group hover:shadow-lg dark:bg-black/50" target="_blank" href={item.url}>

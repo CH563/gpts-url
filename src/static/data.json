@@ -7,6 +7,13 @@
         "desc": "Makes you a professional high quality PNG for your business"
     },
     {
+        "url": "https://chat.openai.com/g/g-2Eo3NxuS7-designergpt",
+        "icon": "https://files.oaiusercontent.com/file-x4outSHGhQh7YW6b8fqDK26y?se=2123-10-17T05%3A48%3A06Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Decd882e5-15b7-4dba-8198-94a8849974f9.png&sig=DAm8CnFD1K9kaX%2BVe6AFBl1Yje0t1MGJKrm/tT4YTFc%3D",
+        "title": "DesignerGPT",
+        "author": "Pietro Schirano",
+        "desc": "Creates and hosts beautiful websites"
+    },
+    {
         "url": "https://chat.openai.com/g/g-dq9i42tRO-chatxgb",
         "icon": "https://files.oaiusercontent.com/file-2A75JzrlEL3OtHu3KQBXhVsS?se=2123-10-14T12%3A36%3A41Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3De73f9931-64c4-4e87-88fc-8090bdea1f9c.png&sig=rH8WcY6d1CREZSTxKtH9xVEXEkm1FGF8RwXLAFlzUCA%3D",
         "title": "ChatXGB",
@@ -21,11 +28,32 @@
         "desc": "Analyze & visualize data from 20+ platforms, including Google Analytics, Google Ads & Facebook Ads."
     },
     {
+        "url": "https://chat.openai.com/g/g-g0ObGf2Ow-supabase-docs-writer",
+        "icon": "https://files.oaiusercontent.com/file-6VsXlbfCFiadk15ttvRAGYmH?se=2123-10-18T10%3A37%3A48Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D40aa8ba8-1d47-4e39-ad86-ef7e41c7886e.png&sig=YHmTInBaK8Br6RLu65b%2B/ttwQt3PdfsmtyLLQm%2Bi6ko%3D",
+        "title": "Supabase Docs Writer",
+        "author": "PAUL COPPLESTONE",
+        "desc": "I provide clear Supabase documentation help."
+    },
+    {
         "url": "https://chat.openai.com/g/g-0g6ZdEtv6-language-coach",
         "icon": "https://files.oaiusercontent.com/file-j83YhNh0Ta4ijMEz5ku5AWCf?se=2123-10-14T19%3A00%3A01Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D48c563e5-4826-449c-a6b5-eaf82b67f8c9.png&sig=s2zZCOVshINOlByC8W2lwA16yyo76m95Ku24DvOVtOk%3D",
         "title": "Language Coach",
         "author": "Watchovr LLC",
         "desc": "Practice speaking another language like a local without being a local"
+    },
+    {
+        "url": "https://chat.openai.com/g/g-HEChZ7eza-bibigpt-co",
+        "icon": "https://files.oaiusercontent.com/file-4zkqetymyNRSHTbjk65zhjID?se=2123-10-17T04%3A40%3A55Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dapp-icon.png&sig=2ZXXcWZBJOPgyZaSql9V6ahoLiLmzc9lR72qDKOfhy4%3D",
+        "title": "BibiGPT.co",
+        "author": "bibigpt.co",
+        "desc": "I summarize Bilibili/YouTube/Tiktok videos into key points. Just give me a link.👇"
+    },
+    {
+        "url": "https://chat.openai.com/g/g-YKFGE5u1G-3d-avatar-generator-a",
+        "icon": "https://files.oaiusercontent.com/file-WkwCFpPjmDVTkJqR5hfNjBQU?se=2123-10-17T11%3A10%3A28Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D%2527ChatGPT.webp&sig=18vBz2iN19LK%2BakGVssuXU49EPsn6fp3rKL7LPH2J30%3D",
+        "title": "3D Avatar Generator - A",
+        "author": "achgdesign.com",
+        "desc": "生成一张属于你自己的3D头像"
     },
     {
         "url": "https://chat.openai.com/g/g-tcmMldCYy-simpsonize-me",
