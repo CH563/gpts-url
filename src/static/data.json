@@ -42,6 +42,13 @@
         "desc": "Practice speaking another language like a local without being a local"
     },
     {
+        "url": "https://chat.openai.com/g/g-kMKw5tFmB-convertanything",
+        "icon": "https://files.oaiusercontent.com/file-Gpws0QDcR4iL5URQQoxxvRET?se=2123-10-19T06%3A07%3A50Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D8c64f203-9ea6-4c45-a339-d92f6545a2f7.png&sig=Zhlsp136YwCoXKLK%2BpCspdKokq%2BhQDrdimmAXvE4vME%3D",
+        "title": "ConvertAnything",
+        "author": "Pietro Schirano",
+        "desc": "The ultimate file converter for images, audio, video, documents and more. It handles individual or batch uploads, supports ZIPs, and provides a download link."
+    },
+    {
         "url": "https://chat.openai.com/g/g-HEChZ7eza-bibigpt-co",
         "icon": "https://files.oaiusercontent.com/file-4zkqetymyNRSHTbjk65zhjID?se=2123-10-17T04%3A40%3A55Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dapp-icon.png&sig=2ZXXcWZBJOPgyZaSql9V6ahoLiLmzc9lR72qDKOfhy4%3D",
         "title": "BibiGPT.co",
@@ -54,6 +61,13 @@
         "title": "3D Avatar Generator - A",
         "author": "achgdesign.com",
         "desc": "生成一张属于你自己的3D头像"
+    },
+    {
+        "url": "https://chat.openai.com/g/g-6TW6hL3cK-cyber-scraper-seraphina-web-crawler",
+        "icon": "https://files.oaiusercontent.com/file-GpCWOQSKeLa6JarWmuqtxRVI?se=2123-10-19T15%3A38%3A35Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3De6083271-ccdb-45d6-a960-6bbac434ddf3.png&sig=MwzRfHrYAonoJuoMq8HlfKpJgg2S0RG%2BUIf7gYVLrwg%3D",
+        "title": "Cyber Scraper: Seraphina (Web Crawler)",
+        "author": "lysonober.com",
+        "desc": "🐍 I'm a Python Web Scraping Expert, skilled in using advanced frameworks(E.g. selenium) and addressing anti-scraping measures 😉 Let's quickly design a web scraping code together to gather data for your scientific research task 🚀"
     },
     {
         "url": "https://chat.openai.com/g/g-tcmMldCYy-simpsonize-me",
@@ -82,6 +96,13 @@
         "title": "Disneyfy Me",
         "author": "Aaron Misash Apaza Coaquira",
         "desc": "Creates Disney-style art from images, maintaining original details."
+    },
+    {
+        "url": "https://chat.openai.com/g/g-zut9cfvbZ-paper-reading-advisor-carpe-diem",
+        "icon": "https://files.oaiusercontent.com/file-aYu15SNasmjEblebPmafqgIb?se=2123-10-16T10%3A58%3A28Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dlyson-prof.jpeg&sig=rn2b8%2BOsqRrrDo7KAl%2BlJapsn9Rlm52lA5KSuELzwdw%3D",
+        "title": "Paper Reading Advisor: Carpe Diem",
+        "author": "lysonober.com",
+        "desc": "📚🎓 Discover the art of academic paper reading with Me. 👋 Hi, I am Carpe Diem, your personal paper reading tutor. 😉 I am always here, patiently explaining knowledge in various easy-to-understand ways. 🙌 What are you waiting for, let's dive into the world of science!"
     },
     {
         "url": "https://chat.openai.com/g/g-IpYeySKKw-emailgeeks",
