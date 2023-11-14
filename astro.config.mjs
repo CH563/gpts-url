@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
 import vercel from "@astrojs/vercel/serverless";
 import tailwind from "@astrojs/tailwind";
-
 import sitemap from "@astrojs/sitemap";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,5 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [tailwind(), sitemap()]
+  integrations: [tailwind(), sitemap(), react()]
 });

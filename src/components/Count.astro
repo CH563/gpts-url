@@ -1,0 +1,14 @@
+---
+let count = 0;
+try {
+    const response = await fetch(`${Astro.url}/api/get-count`);
+    if (response.ok) {
+        const json = await response.json();
+        count = json.data.count;
+    }
+} catch (error) {
+    //
+}
+---
+
+<div class="text-md text-muted-foreground">{count} GPTs found and counting.</div>

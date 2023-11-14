@@ -1,12 +1,18 @@
 import type { APIRoute } from 'astro';
-import data from '../../static/data.json';
+import client from '../../libs/postgres';
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
   const keyword = body.keyword;
   let lists: any[] = [];
   if (keyword) {
-    lists = data.filter(e => e.title.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()) || e.desc.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()));
+    try {
+      const k = `%${keyword}%`;
+      const { rows } = await client.sql`select url, icon, title, description, author from gpts_lists WHERE title ilike ${k} or description ilike ${k} limit 6`;
+      if (rows?.length) lists = rows;
+    } catch (error) {
+      // console.log(error);
+    }
   }
   return new Response(JSON.stringify({
     code: 0,
