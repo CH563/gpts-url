@@ -7,8 +7,8 @@ export const GET: APIRoute = async ({request}) => {
     //     _obj[key] = value
     // });
     // const { t } = _obj;
-    let num = 50;
-    if (request.url.includes('t=se')) num = 300;
+    let num = 51;
+    if (request.url.includes('t=se')) num = 150;
     const { rows } = await client.sql`SELECT url, title, icon, description, author FROM gpts_lists order by RANDOM() desc limit ${num};`.catch(() => {
         return {
             rows: []

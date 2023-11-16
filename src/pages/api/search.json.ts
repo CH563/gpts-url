@@ -13,6 +13,13 @@ export const POST: APIRoute = async ({ request }) => {
     } catch (error) {
       // console.log(error);
     }
+  } else {
+    try {
+      const { rows } = await client.sql`SELECT url, title, icon, description, author FROM gpts_lists order by RANDOM() desc limit 51;`;
+      if (rows?.length) lists = rows;
+    } catch (error) {
+      // console.log(error);
+    }
   }
   return new Response(JSON.stringify({
     code: 0,

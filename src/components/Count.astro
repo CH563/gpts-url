@@ -1,14 +1,4 @@
 ---
-let count = 0;
-try {
-    const response = await fetch(`${Astro.url}/api/get-count`);
-    if (response.ok) {
-        const json = await response.json();
-        count = json.data.count;
-    }
-} catch (error) {
-    //
-}
 ---
 
-<div class="text-md text-muted-foreground text-center md:text-left">{count} GPTs found and counting.</div>
+<h2 class="text-md text-muted-foreground text-center">Share and discover the best custom GPTs in ChatGPT store by OpenAI</h2>
