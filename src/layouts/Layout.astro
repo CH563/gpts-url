@@ -48,29 +48,27 @@ const resolvedImageWithDomain = `${Astro.url.origin}/pwa-512.png`;
             }}
         />
     </head>
-    <body class='bg-gray-50 dark:bg-gray-900 dark:text-white'>
+    <body class='bg-gray-50 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen'>
         <slot />
-        <style is:global>
-            :root {
-                --accent: 136, 58, 234;
-                --accent-light: 224, 204, 250;
-                --accent-dark: 49, 10, 101;
-                --accent-gradient: linear-gradient(
-                    45deg,
-                    rgb(var(--accent)),
-                    rgb(var(--accent-light)) 30%,
-                    white 60%
-                );
-            }
-            html {
-                font-family: system-ui, sans-serif;
-            }
-        </style>
     </body>
 </html>
 
-
-
+<style is:global>
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            rgb(var(--accent-light)) 30%,
+            white 60%
+        );
+    }
+    html {
+        font-family: system-ui, sans-serif;
+    }
+</style>
 
 <script>
 const initTheme = () => {

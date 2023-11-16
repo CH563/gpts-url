@@ -52,7 +52,7 @@ if (!searchVal) {
         </button>
     </div>
 </div>
-<div class="grid grid-cols-1 min-h-[400px] gap-5 sm:grid-cols-2 md:grid-cols-3 py-4" id="lists">
+<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 py-4" id="lists">
     {lists.length ? lists.map((item: any) => (
         <a
             class="flex gap-3 bg-white rounded-2xl p-5 items-start cursor-pointer select-none overflow-hidden group hover:shadow-lg dark:bg-black/50"
@@ -112,6 +112,8 @@ const handleMagicClick = async () => {
     if (isLoading) return;
     const element = document.getElementById('lists');
     if (!element) return;
+    if (searchInput) searchInput.value = '';
+    window.history.replaceState(null, '', '/');
     isLoading = true;
     magicBtn?.setAttribute('disabled', 'true');
     const response = await fetch(`/api/get`);
@@ -130,7 +132,8 @@ const toSearch = async () => {
     const element = document.getElementById('lists');
     if (!element) return;
     const val = searchInput?.value || '';
-    window.history.replaceState(null, '', `/?s=${val}`)
+    const search = val ? `/?s=${val}` : '/';
+    window.history.replaceState(null, '', search);
     isLoading = true;
     const response = await fetch(`/api/search.json`, {method: 'POST', body: JSON.stringify({
         keyword: val
