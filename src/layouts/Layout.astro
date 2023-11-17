@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import { SEO } from 'astro-seo';
 
 export interface Props {
@@ -7,7 +8,7 @@ export interface Props {
 }
 
 const canonicalURL = Astro.url.toString();
-const resolvedImageWithDomain = `${Astro.url.origin}/pwa-512.png`;
+const resolvedImageWithDomain = `${Astro.url.origin}/image.png`;
 
 const { title, description } = Astro.props;
 
@@ -44,19 +45,24 @@ const showDesc = description || 'GPTsURL is the first and biggest GPTs directory
                 creator: '@LiWen563',
                 site: '@LiWen563',
                 card: 'summary_large_image',
+                imageAlt: 'GPTs URL',
+                description: showDesc,
+                image: resolvedImageWithDomain,
             }}
             openGraph={{
                 basic: {
                     url: canonicalURL,
                     type: 'website',
-                    title: 'Discover the GPTs Store by OpenAI | GPTsURL - Share and search gpts url',
+                    title: showTitle,
                     image: resolvedImageWithDomain,
                 },
                 image: {
+                    url: resolvedImageWithDomain,
                     alt: 'GPTs URL',
                 },
             }}
         />
+        <ViewTransitions />
     </head>
     <body class='bg-gray-50 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen'>
         <slot />

@@ -14,5 +14,7 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [tailwind(), sitemap(), react()]
+  integrations: [tailwind(), sitemap({
+    customPages: ['https://gptsurl.com/gpts-store/convertanything', 'https://gptsurl.com/gpts-store/drawn-to-style', 'https://gptsurl.com/gpts-store/logogpt', 'https://gptsurl.com/gpts-store/twUGxmpHv-visual-weather-artist-gpt', 'https://gptsurl.com/gpts-store/chatprd', 'https://gptsurl.com/gpts-store/universal-primer', 'https://gptsurl.com/gpts-store/nomadgpt', 'https://gptsurl.com/gpts-store/designergpt', 'https://gptsurl.com/gpts-store/aso-buddy']
+  }), react()]
 });
