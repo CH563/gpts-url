@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import { SEO } from 'astro-seo';
 
 export interface Props {
@@ -62,7 +61,6 @@ const showDesc = description || 'GPTsURL is the first and biggest GPTs directory
                 },
             }}
         />
-        <ViewTransitions />
     </head>
     <body class='bg-gray-50 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen'>
         <slot />
