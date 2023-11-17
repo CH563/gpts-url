@@ -62,13 +62,13 @@ try {
         </div>
         <div class="py-8 mb-8">
             <h4 class="text-lg font-bold">About {item.title}</h4>
-            <div class="p-4">
-                <article class="prose lg:prose-xl" set:html={htmlContent}></article>
+            <div class="p-4 rounded-md bg-white dark:bg-gray-800 my-3">
+                <article class="prose dark:text-white" set:html={htmlContent}></article>
             </div>
             {item.twitter &&
                 <div class="grid gap-2 justify-items-center">
                     <div class="text-lg">From the Creator</div>
-                    <blockquote class="twitter-tweet"><a href={item.twitter}></a></blockquote>
+                    <blockquote class="twitter-tweet"><a href={item.twitter}>Twitter</a></blockquote>
                 </div>
             }
         </div>
