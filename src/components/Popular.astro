@@ -1,0 +1,18 @@
+---
+import Card from '../components/Card.astro';
+
+let lists = [];
+try {
+    const response = await fetch(`${Astro.url.origin}/api/get?t=hot`);
+    if (response.ok) {
+        const json = await response.json();
+        lists = json.data.lists;
+    }
+} catch (error) {
+    //
+}
+---
+
+<h4 class="text-2xl font-bold col-span-3 mb-2">Most Popular</h4>
+{lists.map((item: any) => <Card item={item} />)}
+<div class="col-span-3 h-4 border-b-2 mb-6"></div>

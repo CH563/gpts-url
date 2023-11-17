@@ -1,0 +1,87 @@
+---
+import markdownIt from 'markdown-it';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ImgIco from '../../components/ImgIco.astro';
+import Card from '../../components/Card.astro';
+
+const { searchKey } = Astro.params;
+let item: any = {};
+let htmlContent = '';
+let lists = [];
+try {
+    const response = await fetch(`${Astro.url.origin}/api/get-by-key?key=${searchKey}`);
+    if (response.ok) {
+        const json = await response.json();
+        if (json?.data?.lists?.length) {
+            item = json.data.lists[0];
+            if (item.content) {
+                const md = markdownIt();
+                htmlContent = md.render(item.content);
+            }
+        } else {
+            return Astro.redirect("/404");
+        }
+    }
+} catch (error) {
+    console.log(error);
+    return Astro.redirect("/404");
+}
+try {
+    const response = await fetch(`${Astro.url.origin}/api/get?t=six`);
+    if (response.ok) {
+        const json = await response.json();
+        lists = json.data.lists;
+    }
+} catch (error) {
+    //
+}
+---
+
+<Layout>
+    <Header />
+    <main class="container py-8 flex-1">
+        <div class="grid gap-1 justify-items-center">
+            <ImgIco icon={item.icon} title={item.title} />
+            <h1 class="text-lg pt-3">{item.title}</h1>
+            <p class="text-gray-500 text-sm dark:text-gray-400">
+                {item.description}
+            </p>
+            {item.author && <p class="opacity-70 truncate text-xs md:text-sm">by <span class="text-[#0b7b94] dark:text-[#64aebf]">{item.author}<span></p>}
+            <div class="p-3">
+                <a
+                    href={item.url}
+                    target="_blank"
+                    class="flex disabled:shadow-none disabled:opacity-70 text-white disabled:active:scale-100 border-0 bg-green-700 rounded-md py-3 px-8 text-sm items-center gap-1 shadow-sm dark:bg-green-600 hover:bg-green-600 dark:hover:bg-green-500 active:scale-95 group"
+                    type="button"
+                >
+                    Start using {item.title} on ChatGPT<span class="ml-1 group-hover:ml-2 transition-all">→</span>
+                </a>
+            </div>
+        </div>
+        <div class="py-8 mb-8">
+            <h4 class="text-lg font-bold">About {item.title}</h4>
+            <div class="p-4">
+                <article class="prose lg:prose-xl" set:html={htmlContent}></article>
+            </div>
+            {item.twitter &&
+                <div class="grid gap-2 justify-items-center">
+                    <div class="text-lg">From the Creator</div>
+                    <blockquote class="twitter-tweet"><a href={item.twitter}></a></blockquote>
+                </div>
+            }
+        </div>
+        {lists.length && <div class="border-t pt-4">
+            <h4 class="text-lg font-bold">Trending GPTs</h4>
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 py-4">
+                {lists.map((item: any) => <Card item={item} />)}
+            </div>
+        </div>}
+    </main>
+    <Footer />
+</Layout>
+
+<script>
+    import '../../static/widgets';
+</script>

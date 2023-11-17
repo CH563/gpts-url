@@ -1,8 +1,18 @@
 ---
 import { SEO } from 'astro-seo';
 
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
 const canonicalURL = Astro.url.toString();
 const resolvedImageWithDomain = `${Astro.url.origin}/pwa-512.png`;
+
+const { title, description } = Astro.props;
+
+const showTitle = title ? `${title} in GPTs Store` : 'Discover the GPTs Store by OpenAI | GPTsURL - Share and search GPTs url to use ChatGPT';
+const showDesc = description || 'GPTsURL is the first and biggest GPTs directory. With GPTsUrl, you can share and discover the best GPTs in ChatGPT Store';
 ---
 
 <!doctype html>
@@ -27,8 +37,8 @@ const resolvedImageWithDomain = `${Astro.url.origin}/pwa-512.png`;
         <meta name='generator' content={Astro.generator} />
         <meta name="keywords" content="GPTs, GPTs store, GPTs lists, GPTs Hunter, ChatGPT, OpenAI GPTs, search GPTs, Awesome GPTs, Custom GPT">
         <SEO
-            title='Discover the GPT Store by OpenAI | GPTsURL - Share and search gpts url to use ChatGPT'
-            description='GPTsURL is the first and biggest GPTs directory. With GPTsUrl, you can share and discover the best GPTs in ChatGPT Store'
+            title={showTitle}
+            description={showDesc}
             canonical={canonicalURL}
             twitter={{
                 creator: '@LiWen563',
