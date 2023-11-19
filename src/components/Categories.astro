@@ -1,0 +1,57 @@
+---
+let lists = [{id:0,categories_name:'👌 All'},{id:-1,categories_name:'🔥 Popular'}];
+const searchVal = Astro.url.searchParams.get('s') || '';
+try {
+    const response = await fetch(`${Astro.url.origin}/api/categories`);
+    if (response.ok) {
+        const json = await response.json();
+        lists.push(...json.data.lists);
+    }
+} catch (error) {
+    
+}
+---
+
+<div id="categories" class="flex gap-2 flex-wrap py-4 text-sm [&_[data-status=active]]:bg-green-600 [&_[data-status=active]]:text-white [&_[data-status=active]]:border-green-600">
+{
+    lists.map((item: {id: number, categories_name: string}) => (
+        <button data-status={(item.id === 0 && !searchVal) && 'active'} data-id={item.id} class="border rounded-lg px-4 py-1 bg-white hover:border-green-600 hover:text-green-600 dark:bg-black dark:border-gray-700 dark:hover:border-green-600">{item.categories_name}</button>
+    ))
+}
+</div>
+
+<script>
+    import readerList from '../libs/readerList';
+    const searchInput = document.querySelector('#searchBox input') as HTMLInputElement;
+    const categoriesBtn = document.querySelectorAll('#categories button') as unknown as HTMLButtonElement[];
+    let controller: AbortController | null = null
+    const toSelect = async (event: any) => {
+        const element = document.getElementById('lists');
+        if (!element) return;
+        if(searchInput) searchInput.value = '';
+        window.history.replaceState(null, '', '/');
+        const el = event.target;
+        for(const item of categoriesBtn) {
+            const status = item.getAttribute('data-status');
+            if (status) item.setAttribute('data-status', '');
+        }
+        el?.setAttribute('data-status', 'active');
+        const id = el?.getAttribute('data-id');
+        if (controller) controller.abort();
+        controller = new AbortController();
+        const response = await fetch(`/api/get?cate=${id}`, {signal: controller.signal});
+        controller = null;
+        if (response.ok) {
+            const json = await response.json().catch(() => '');
+            const lists = json?.data?.lists;
+            const page = json?.data?.page;
+            const pageSize = json?.data?.page_size;
+            if (lists) element.innerHTML = readerList(lists, 30, page, pageSize, id);
+        }
+    }
+    if (categoriesBtn && categoriesBtn.length) {
+        for(const item of categoriesBtn) {
+            item.addEventListener('click', toSelect, false);
+        }
+    }
+</script>

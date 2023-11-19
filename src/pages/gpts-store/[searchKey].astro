@@ -29,7 +29,7 @@ try {
     return Astro.redirect("/404");
 }
 try {
-    const response = await fetch(`${Astro.url.origin}/api/get?t=six`);
+    const response = await fetch(`${Astro.url.origin}/api/get?cate=-2&not=${searchKey}`);
     if (response.ok) {
         const json = await response.json();
         lists = json.data.lists;

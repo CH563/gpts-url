@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://www.gptsurl.com/sitemap-index.xml
+Sitemap: http://gptsurl.com/sitemap.xml

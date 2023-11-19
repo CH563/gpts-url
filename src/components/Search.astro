@@ -1,0 +1,75 @@
+---
+const searchVal = Astro.url.searchParams.get('s');
+---
+
+<div class="p-2">
+    <div class="p-2 flex justify-center">
+        <div id="searchBox" class="w-[80%] max-w-2xl relative">
+            <input
+                type="text"
+                value={searchVal || ''}
+                placeholder="Keyword to search GPTs"
+                class="flex h-12 w-full rounded-md border-2 border-green-600 bg-white px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-600"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute right-4 top-[50%] mt-[-8px] cursor-pointer"><polyline points="9 10 4 15 9 20"></polyline><path d="M20 4v7a4 4 0 0 1-4 4H4"></path></svg>
+        </div>
+    </div>
+</div>
+
+<script>
+    import readerList from '../libs/readerList';
+
+    let isLoading = false;
+    const searchInput = document.querySelector('#searchBox input') as HTMLInputElement;
+    const searchBtn = document.querySelector('#searchBox svg');
+    const categoriesBtn = document.querySelectorAll('#categories button') as unknown as HTMLButtonElement[];
+    let controller: AbortController | null = null
+
+    const toSearch = async () => {
+        if (isLoading) return;
+        const element = document.getElementById('lists');
+        if (!element) return;
+        const val = searchInput?.value || '';
+        const search = val ? `/?s=${val}` : '/';
+        window.history.replaceState(null, '', search);
+        if (categoriesBtn && categoriesBtn.length) {
+            for(const item of categoriesBtn) {
+                const status = item.getAttribute('data-status');
+                if (status) item.setAttribute('data-status', '');
+            }
+            if (!val) document.querySelector('#categories [data-id="0"]')?.setAttribute('data-status', 'active');
+        }
+        if (controller) {
+            console.log('abort');
+            controller.abort();
+        }
+        isLoading = true;
+        controller = new AbortController();
+        const response = await fetch(`/api/get?keyword=${val}`, {
+            signal: controller.signal
+        });
+        controller = null;
+        isLoading = false;
+        if (response.ok) {
+            const json = await response.json().catch(() => '');
+            const lists = json?.data?.lists;
+            const page = json?.data?.page;
+            const pageSize = json?.data?.page_size;
+            if (lists?.length) {
+                element.innerHTML = readerList(lists, 30, page, pageSize, '', val);
+            } else if(val) {
+                element.innerHTML = `<div class="text-center col-span-3 py-4">Can't find the "${val}" GPTs</div>`
+            }
+        }
+    }
+    const handleSearch = async (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            toSearch();
+            return;
+        }
+    }
+
+    searchBtn?.addEventListener('click', toSearch);
+    searchInput?.addEventListener('keydown', handleSearch);
+</script>
