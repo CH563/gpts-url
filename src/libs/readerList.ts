@@ -2,7 +2,7 @@ const readerList = (lists: any[], searchVal?: string) => {
     const elArr = [];
     if (searchVal) {
         const div = document.createElement('div');
-        div.className = 'text-2xl font-bold col-span-3 mb-2';
+        div.className = 'text-2xl font-bold md:col-span-3 sm:col-span-2 mb-2';
         div.innerText = `Search "${searchVal}" Results`;
         elArr.push(div);
     }

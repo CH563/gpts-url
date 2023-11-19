@@ -56,7 +56,7 @@ const searchVal = Astro.url.searchParams.get('s');
                     const count = +json.data.count;
                     if (count > page * pageSize) {
                         const div = document.createElement('div');
-                        div.className = 'col-span-3 text-center';
+                        div.className = 'md:col-span-3 sm:col-span-2 text-center';
                         const button = document.createElement('button');
                         button.className = 'font-bold py-2 px-4 rounded-full hover:bg-green-400/10 text-green-600 dark:text-green-400';
                         button.innerText = 'Load More';
@@ -73,7 +73,7 @@ const searchVal = Astro.url.searchParams.get('s');
                     }
                 }
             }  else if(searchVal && page === 1) {
-                element.innerHTML = `<div class="text-center col-span-3 py-4">Can't find the "${searchVal}" GPTs</div>`
+                element.innerHTML = `<div class="text-center md:col-span-3 sm:col-span-2 py-4">Can't find the "${searchVal}" GPTs</div>`
             }
         }
     }
