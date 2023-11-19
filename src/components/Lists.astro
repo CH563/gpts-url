@@ -14,7 +14,7 @@ try {
     const countRes = await fetch(`${Astro.url.origin}/api/get-count?keyword=${searchVal}`);
     if (countRes.ok) {
         const json = await countRes.json();
-        // count = +json.data.count;
+        count = +json.data.count;
     }
 } catch (error) {
     //
@@ -24,6 +24,6 @@ try {
 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 py-4" id="lists">
     {lists.length ? lists.map((item: any) => <Card item={item} />) : <div class="text-center col-span-3 py-4">Can't find the "{searchVal}" GPTs</div>}
     {count > pageSize && <div class="col-span-3 text-center">
-        <button class="more font-bold text-green-600 underline dark:text-green-400" data-index="2" data-cate="0" data-val={searchVal}>Load More</button>
+        <button id="more" class="font-bold py-2 px-4 rounded-full hover:bg-green-400/10 text-green-600 dark:text-green-400 [&_svg]:animate-spin" data-val={searchVal}>Load More</button>
     </div>}
 </div>

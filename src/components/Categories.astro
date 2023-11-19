@@ -19,39 +19,3 @@ try {
     ))
 }
 </div>
-
-<script>
-    import readerList from '../libs/readerList';
-    const searchInput = document.querySelector('#searchBox input') as HTMLInputElement;
-    const categoriesBtn = document.querySelectorAll('#categories button') as unknown as HTMLButtonElement[];
-    let controller: AbortController | null = null
-    const toSelect = async (event: any) => {
-        const element = document.getElementById('lists');
-        if (!element) return;
-        if(searchInput) searchInput.value = '';
-        window.history.replaceState(null, '', '/');
-        const el = event.target;
-        for(const item of categoriesBtn) {
-            const status = item.getAttribute('data-status');
-            if (status) item.setAttribute('data-status', '');
-        }
-        el?.setAttribute('data-status', 'active');
-        const id = el?.getAttribute('data-id');
-        if (controller) controller.abort();
-        controller = new AbortController();
-        const response = await fetch(`/api/get?cate=${id}`, {signal: controller.signal});
-        controller = null;
-        if (response.ok) {
-            const json = await response.json().catch(() => '');
-            const lists = json?.data?.lists;
-            const page = json?.data?.page;
-            const pageSize = json?.data?.page_size;
-            if (lists) element.innerHTML = readerList(lists, 30, page, pageSize, id);
-        }
-    }
-    if (categoriesBtn && categoriesBtn.length) {
-        for(const item of categoriesBtn) {
-            item.addEventListener('click', toSelect, false);
-        }
-    }
-</script>

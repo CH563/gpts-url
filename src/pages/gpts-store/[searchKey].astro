@@ -54,7 +54,6 @@ try {
                     href={item.url}
                     target="_blank"
                     class="flex disabled:shadow-none disabled:opacity-70 text-white disabled:active:scale-100 border-0 bg-green-700 rounded-md py-3 px-8 text-sm items-center gap-1 shadow-sm dark:bg-green-600 hover:bg-green-600 dark:hover:bg-green-500 active:scale-95 group"
-                    type="button"
                 >
                     Start using {item.title} on ChatGPT<span class="ml-1 group-hover:ml-2 transition-all">→</span>
                 </a>
@@ -62,6 +61,7 @@ try {
         </div>
         <div class="py-8 mb-8">
             <h4 class="text-lg font-bold">About {item.title}</h4>
+            <div class="py-2 text-sm">GPTs link: <a href={item.url} class="underline" target="_blank">{item.url}</a></div>
             <div class="p-4 rounded-md bg-white dark:bg-gray-800 my-3">
                 <article class="prose dark:text-white" set:html={htmlContent}></article>
             </div>
