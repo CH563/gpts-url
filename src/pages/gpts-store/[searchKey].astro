@@ -45,10 +45,10 @@ try {
         <div class="grid gap-1 justify-items-center">
             <ImgIco icon={item.icon} title={item.title} />
             <h1 class="text-lg pt-3">{item.title}</h1>
-            <p class="text-gray-500 text-sm dark:text-gray-400">
+            <p class="text-gray-600 text-sm dark:text-gray-400">
                 {item.description}
             </p>
-            {item.author && <p class="opacity-70 truncate text-xs md:text-sm">by <span class="text-[#0b7b94] dark:text-[#64aebf]">{item.author}<span></p>}
+            {item.author && <p class="opacity-70 truncate text-xs md:text-sm">by <span class="text-black underline dark:text-white">{item.author}<span></p>}
             <div class="p-3">
                 <a
                     href={item.url}

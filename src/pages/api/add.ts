@@ -1,9 +1,9 @@
 import type { APIRoute } from 'astro';
-import client from '../../libs/postgres';
-// import { toAddWorksData } from '../../example/addData';
+// import client from '../../libs/postgres';
+// import { toRun } from '../../example/categories';
 
 export const POST: APIRoute = async ({ request }) => {
-    // await toAddWorksData();
+    // await toRun();
     return new Response(
         JSON.stringify({
             code: 0,

@@ -65,7 +65,7 @@ const magicBtn = document.getElementById('magic');
 const searchInput = document.querySelector('#searchBox input') as HTMLInputElement;
 const searchBtn = document.querySelector('#searchBox svg');
 const readerList = (lists: any[], searchVal?: string) => {
-    let html = !searchVal ? `<h4 class="text-2xl font-bold col-span-3 mb-2">Recommended For You</h4>` : `<h4 class="text-2xl font-bold col-span-3 mb-2">Search "${searchVal}" Results</h4>`;
+    let html = !searchVal ? `<div class="text-2xl font-bold col-span-3 mb-2">Recommended For You</div>` : `<div class="text-2xl font-bold col-span-3 mb-2">Search "${searchVal}" Results</div>`;
     for(const item of lists) {
         html += `
             <a
@@ -82,8 +82,8 @@ const readerList = (lists: any[], searchVal?: string) => {
                     <h3 class="font-medium truncate text-gray-900 dark:text-gray-50 text-sm md:text-lg  transition group-hover:text-[#0b7b94] dark:group-hover:text-[#6cc3d7]">
                         ${item.title}
                     </h3>
-                    ${item.author && `<p class="opacity-70 truncate text-xs md:text-sm mt-1">by <span class="text-[#0b7b94] dark:text-[#64aebf]">${item.author}<span></p>`}
-                    <p class="text-gray-500 mt-1 text-xs md:text-sm dark:text-gray-400">
+                    ${item.author && `<p class="opacity-70 truncate text-xs md:text-sm mt-1">by <span class="text-black underline dark:text-white">${item.author}<span></p>`}
+                    <p class="text-gray-600 mt-1 text-xs md:text-sm dark:text-gray-400">
                         ${item.description}
                     </p>
                 </div>
