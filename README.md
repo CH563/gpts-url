@@ -1,10 +1,10 @@
 ![GPTsURL](https://github.com/CH563/gtps-url/blob/main/public/logo.png)
 
-Sourced from ChatGPT DALL·E Designs
-
 # GPTs URL
 
 Discover the GPTs Store by OpenAI | GPTsURL - Share and search GPTs url to use ChatGPT
+
+*Logo used from ChatGPT DALL·E Designs*
 
 ## 🚀 Project Structure
 
@@ -35,7 +35,7 @@ You'll see the following folders and files:
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## Dependencies
+## Dependencies
 
 [Vercel:](https://vercel.com/) used for deploying website
 
