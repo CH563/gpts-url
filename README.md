@@ -100,7 +100,7 @@ CREATE TABLE "public"."list_categories" (
 
 #### Get the GPTS data of zip into your postgres database, Is include 6,876 GPTs
 
-[Download](https://github.com/CH563/gtps-url/releases/tag/untagged-d6ea228bb35fb910367f)
+[Download](https://github.com/CH563/gtps-url/releases/tag/v1.0.0)
 
 
 ### Running Locally
