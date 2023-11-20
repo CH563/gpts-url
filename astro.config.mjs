@@ -2,9 +2,7 @@ import { defineConfig } from 'astro/config';
 import vercel from "@astrojs/vercel/serverless";
 import tailwind from "@astrojs/tailwind";
 
-import react from "@astrojs/react";
-
-const site = "https://gptsurl.com";
+const site = "https://wwww.gptsurl.com";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +13,5 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [tailwind(), react()]
+  integrations: [tailwind()]
 });

@@ -12,7 +12,7 @@ try {
 }
 ---
 
-<div id="categories" class="flex gap-2 flex-wrap py-4 text-sm [&_[data-status=active]]:bg-green-600 [&_[data-status=active]]:text-white [&_[data-status=active]]:border-green-600">
+<div id="categories" class="flex gap-2 flex-wrap py-4 text-sm [&_[data-status=active]]:bg-green-800 [&_[data-status=active]]:text-white [&_[data-status=active]]:border-green-800">
 {
     lists.map((item: {id: number, categories_name: string}) => (
         <button data-status={(item.id === 0 && !searchVal) && 'active'} data-id={item.id} class="border rounded-lg px-4 py-1 bg-white hover:border-green-600 hover:text-green-600 dark:bg-black dark:border-gray-700 dark:hover:border-green-600">{item.categories_name}</button>
