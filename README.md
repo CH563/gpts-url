@@ -1,5 +1,7 @@
 ![GPTsURL](https://github.com/CH563/gtps-url/blob/main/public/logo.png)
 
+[👉掘金文章](https://juejin.cn/post/7303386068606648359)
+
 # GPTs URL
 
 Discover the GPTs Store by OpenAI | GPTsURL - Share and search GPTs url to use ChatGPT
