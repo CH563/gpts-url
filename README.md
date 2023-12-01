@@ -100,7 +100,9 @@ CREATE TABLE "public"."list_categories" (
 );
 ```
 
-#### Get the GPTS data of zip into your postgres database, Is include 6,876 GPTs
+#### Get the GPTs data of zip into your postgres database, Is include 6,876 GPTs
+
+`Data from "site:chat.openai.com/g/ {keyword|category}"`
 
 [Download](https://github.com/CH563/gtps-url/releases/tag/v1.0.0)
 
@@ -147,6 +149,12 @@ All commands are run from the root of the project, from a terminal:
 ### If you find anything wrong, give me an Issues
 
 [Give me the bugs](https://github.com/CH563/gtps-url/issues)
+
+## Thanks to
+
+[Astro](https://astro.build/) for deployment
+
+inspired credit to [GPTsHunter](https://www.GPTsHunter.com), [AllGPTs](https://allgpts.co/)
 
 ### Else if this project is helpful to you, buy me a coffee😄
 
