@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
+import '../static/global.css';
 
 export interface Props {
   title?: string;
@@ -19,7 +20,6 @@ const showDesc = description || 'GPTsURL is the first and biggest GPTs directory
 <html lang='en'>
     <head>
         <meta charset='UTF-8' />
-        <meta name='description' content='Astro description' />
         <meta
             name='viewport'
             content='width=device-width, initial-scale=1'
@@ -62,27 +62,10 @@ const showDesc = description || 'GPTsURL is the first and biggest GPTs directory
             }}
         />
     </head>
-    <body class='bg-gray-50/80 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen'>
+    <body class='flex flex-col min-h-screen'>
         <slot />
     </body>
 </html>
-
-<style is:global>
-    :root {
-        --accent: 136, 58, 234;
-        --accent-light: 224, 204, 250;
-        --accent-dark: 49, 10, 101;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            rgb(var(--accent-light)) 30%,
-            white 60%
-        );
-    }
-    html {
-        font-family: system-ui, sans-serif;
-    }
-</style>
 
 <script>
 const initTheme = () => {
