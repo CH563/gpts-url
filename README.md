@@ -10,7 +10,7 @@ Discover the GPTs Store by OpenAI | GPTsURL - Share and search GPTs url to use C
 
 ## 🚀 Project Structure
 
-🍿 Live preview: [https://www.gptsurl.com](https://www.gptsurl.com)
+🍿 Live preview: [https://gtps-url.vercel.app](https://gtps-url.vercel.app)
 
 ![GPTsURL](https://github.com/CH563/gtps-url/blob/main/public/image-white.png)
 
